@@ -1,0 +1,23 @@
+git clone "<>"
+git switch QUAL
+git switch -c dev/resolve_conflicts
+git rebase -X ours origin/main
+git push origin dev/resolve_conflicts
+
+then create MR from dev to QUAL without checking squash commit option 
+after MR is approved raise QUAL to main without checking squash commit option 
+
+
+################################################################
+
+140355ee8c311f017c213d8cd040ea2911970321
+140355ee - main branch commit 
+
+
+78993ee275bb769642733566d8c4af72d0a9fe1a
+78993ee2 recent qual commit 
+
+
+git rebase --onto main(newbase) QUAL (oldbase)
+
+:%s/new/old/g
